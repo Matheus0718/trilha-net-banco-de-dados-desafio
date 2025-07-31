@@ -8,15 +8,15 @@ select Nome, Ano from Filmes
 select Nome, Ano, Duracao from Filmes
 Order By Ano
 
---3 - Buscar pelo filme de volta para o futuro, trazendo o nome, ano e a duração
+--3 - Buscar pelo filme de volta para o futuro, trazendo o nome, ano e a duraÃ§Ã£o
 Select Nome,Ano,Duracao from Filmes
 Where Nome = 'De Volta para o Futuro'
 
---4 - Buscar os filmes lançados em 1997
+--4 - Buscar os filmes lanÃ§ados em 1997
 select Nome, Ano, Duracao from Filmes
 where Ano = '1997'
 
---5 - Buscar os filmes lançados APÓS o ano 2000
+--5 - Buscar os filmes lanÃ§ados APÃ“S o ano 2000
 select Nome, Ano, Duracao from Filmes
 where Ano > '2000'
 
@@ -29,21 +29,21 @@ Order By Duracao Asc
 
 
 
---7 - Buscar a quantidade de filmes lançadas no ano,
+--7 - Buscar a quantidade de filmes lanÃ§adas no ano,
     --agrupando por ano, ordenando pela duracao em ordem decrescente
 select count(*) as Quantidade, Ano from Filmes
 Group By Ano
 Order By Quantidade desc
 
 
---8 -Buscar os Atores do gênero masculino, 
+--8 -Buscar os Atores do gÃªnero masculino, 
   --retornando o PrimeiroNome, UltimoNome:
 Select Id, PrimeiroNome, UltimoNome, Genero from Atores
 Where Genero ='M'
 
 
 
---9 -Buscar os Atores do gênero feminino, 
+--9 -Buscar os Atores do gÃªnero feminino, 
   --retornando o PrimeiroNome, UltimoNome, e ordenando pelo PrimeiroNome:
 Select Id, PrimeiroNome, UltimoNome, Genero from Atores
 Where Genero = 'F'
@@ -54,7 +54,7 @@ Order By IdFilme
 
 select* from Generos
 
---10 Buscar o nome do filme e o gênero
+--10 Buscar o nome do filme e o gÃªnero
 select 
      f.Nome as NomeFilme,
 	 g.Genero as Genero
@@ -66,14 +66,14 @@ inner join Generos g on fg.IdGenero = g.Id
 
 
 
---11 - Buscar o nome do filme e o gênero do tipo "Mistério"
+--11 - Buscar o nome do filme e o gÃªnero do tipo "MistÃ©rio"
 select 
      f.Nome as NomeFilme,
 	 g.Genero as Genero
 
 from Filmes  f inner join FilmesGenero  fg on f.Id = fg.IdFilme
 inner join Generos g on fg.IdGenero = g.Id
-Where Genero = 'Mistério'
+Where Genero = 'MistÃ©rio'
 
 
 
